@@ -10,19 +10,20 @@ dotenv.config();
 const indexRouter = require('./routes');
 const test1Router = require('./routes/test1');
 const test2Router = require('./routes/test2');
+const dataRouter = require('./routes/data');
 const { sequelize } = require('./models');
 
 const app = express();
 app.set('port', process.env.PORT || 5000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-sequelize.sync({ force: false })
-  .then(() => {
-    console.log('========데이터베이스 연결 성공했습니다.=======');
-  })
-  .catch((err) => {
-    console.error(err);
-  });
+// sequelize.sync({ force: false })
+//   .then(() => {
+//     console.log('========데이터베이스 연결 성공했습니다.=======');
+//   })
+//   .catch((err) => {
+//     console.error(err);
+//   });
 
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, 'publicdir')));
@@ -42,6 +43,7 @@ app.use(session({
 app.use('/', indexRouter);
 app.use('/test1', test1Router);
 app.use('/test2', test2Router);
+app.use('/data', dataRouter);
 
 app.use((req, res, next) => {
   const error =  new Error(`${req.method} ${req.url} 라우터가 없습니다.`);

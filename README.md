@@ -62,7 +62,12 @@ npm start (5000포트로 동작 확인.)
 8. 루트에 있는 .env 파일을 backend폴더로 이동(원래 backend폴더에 있어야 했음. root 디렉토리에 잘 못 만듬.)
 git 명령 삭제 후 이동
 
+9. 라우트 테스트 완료. routes디렉토리 생성 및 파일 생성 / express.static 모듈로 publicdir 디렉토리의 index.html을
+   /test1은 라우트 /routes/test.js의 get(), post()
+  /test2은 라우트  /routes/test.js의 get(), post() 을 처리
 
+10. 라우트 테스트 추가. routes/data /routes/data/a1 routes/data/a2 폴더와 파일
+  및 root 폴더의 README.txt => README.md로 파일명 변경
 
 
 
