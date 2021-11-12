@@ -51,9 +51,16 @@ npm install express cookie-parser express-session dotenv ejs
 npm install -D nodemon
 
 6. .env파일 생성 및 publicdir 폴더 생성 및 index.html 작성, server.js 기본 코드 작성 및 동작 테스트
-npm start
-5000포트로 동작 확인. 
+npm start (5000포트로 동작 확인.)
 
+7. 더 많은 로그 정보 출력을 위한 morgan 모듈 설치및  테스트를 위한 MySQL에서 DB database_esg 생성
+config/config.json파일의 development에 DB 이름, user 이름, user pw 저장
+server.js에 로그를 위한 morgan 미들웨어와 sequelize 초기화 후 동작 테스트
+npm install morgan
+npm start (5000포트로 동작 확인.)
+
+8. 루트에 있는 .env 파일을 backend폴더로 이동(원래 backend폴더에 있어야 했음. root 디렉토리에 잘 못 만듬.)
+git 명령 삭제 후 이동
 
 
 
