@@ -69,9 +69,14 @@ git 명령 삭제 후 이동
 10. 라우트 테스트 추가. routes/data /routes/data/a1 routes/data/a2 폴더와 파일
   및 root 폴더의 README.txt => README.md로 파일명 변경
 
-
-
-
+11. EJS 템플릿 엔진 테스트
+views 폴더 생성 및 템플릿 viewa.ejs, viewb.ejs 생성
+server.js 파일에 
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+으로 라우트 data에 각
+res.render('viewa', { title: 'esj test' });
+적용.
 
 
 
