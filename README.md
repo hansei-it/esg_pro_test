@@ -78,6 +78,8 @@ app.set('view engine', 'ejs');
 res.render('viewa', { title: 'esj test' });
 적용.
 
+12. sequelize 이용한 DB CRUD를 위해 DB 객체 생성 및 연결(models/index.js)
+테스트를 위한 테이블 ORM 모델(user.js와 comment.js) 테이블 모듈 생성
 
 
 
