@@ -5,14 +5,18 @@ const path = require('path');
 const session = require('express-session');
 const ejs = require('ejs');
 const dotenv = require('dotenv');
+const passport = require('passport');
 
 dotenv.config();
 const indexRouter = require('./routes');
 const test1Router = require('./routes/test1');
 const test2Router = require('./routes/test2');
 const dataRouter = require('./routes/data');
+const authRouter = require('./routes/auth');
 const { sequelize } = require('./models');
+const passportConfig = require('./passport');
 
+passportConfig(); // 패스포트 설정
 const app = express();
 app.set('port', process.env.PORT || 5000);
 app.set('views', path.join(__dirname, 'views'));
@@ -39,11 +43,14 @@ app.use(session({
     secure: false,
   },
 }));
+app.use(passport.initialize()); // req 객체에 possprot 설정
+app.use(passport.session());    // req.session 객체에 passport 정보 저장
 
 app.use('/', indexRouter);
 app.use('/test1', test1Router);
 app.use('/test2', test2Router);
 app.use('/data', dataRouter);
+app.use('/auth', authRouter);
 
 app.use((req, res, next) => {
   const error =  new Error(`${req.method} ${req.url} 라우터가 없습니다.`);

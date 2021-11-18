@@ -81,6 +81,24 @@ res.render('viewa', { title: 'esj test' });
 12. sequelize 이용한 DB CRUD를 위해 DB 객체 생성 및 연결(models/index.js)
 테스트를 위한 테이블 ORM 모델(user.js와 comment.js) 테이블 모듈 생성
 
+13. 회원등록 및 로그인 처리를 위한 passport 모듈 추가+구현
+npm install passport passport-local bcrypt
+로 모듈 설치
+passport/index.js와 local 로그인 전략 localStrategy.js 작성
+회원 가입, 로그인, 로그아웃을 위한 auth.js 라우트와 로그인 상태 체크를 위한 middlewares.js 작성
+DB의 user.js 모델 userkey와 password를 포함하도록 수정
+=========
+로그인 확인을 위한 "Postman 테스트"
+회원 가입(/auth/join)
+userkey = aaaa
+password = aaa
+로그인(/auth/login)
+userkey = aaaa
+password = aaa
+로그아웃(/auth/logout)
+
+
+
 
 
 
