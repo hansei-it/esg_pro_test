@@ -97,7 +97,9 @@ userkey = aaaa
 password = aaa
 로그아웃(/auth/logout)
 
-
+14. 구글맵 출력 확인
+/map 라우트에 routes/map/index.js 추가하고 
+맵출력을 위한 views/map.ejs 생성
 
 
 
