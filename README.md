@@ -1,3 +1,12 @@
+15. passport 설명 주석 첨부와 passport 실행 순서 확인을 위한 log 출력
+POST localhost:5000/auth/join  가입
+ {userkey:a, password:d}
+POST localhost:5000/auth/login  로그인
+ {userkey:a, password:d}
+GET localhost:5000/auth/logout  로그아웃
+GET localhost:5000/test1 로그인 후 요청 확인
+GET localhost:5000/test2 비로그인 후 요청 확인
+
 첫 프로젝트 구조을 시작합니다.
 
 1.
@@ -100,6 +109,16 @@ password = aaa
 14. 구글맵 출력 확인
 /map 라우트에 routes/map/index.js 추가하고 
 맵출력을 위한 views/map.ejs 생성
+
+15. passport 설명 주석 첨부와 passport 실행 순서 확인을 위한 log 출력
+POST localhost:5000/auth/join  가입
+ {userkey:a, password:d}
+POST localhost:5000/auth/login  로그인
+ {userkey:a, password:d}
+GET localhost:5000/auth/logout  로그아웃
+GET localhost:5000/test1 로그인 후 요청 확인
+GET localhost:5000/test2 비로그인 후 요청 확인
+
 
 
 

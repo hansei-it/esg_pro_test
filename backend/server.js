@@ -44,8 +44,14 @@ app.use(session({
     secure: false,
   },
 }));
-app.use(passport.initialize()); // req 객체에 possprot 설정
-app.use(passport.session());    // req.session 객체에 passport 정보 저장
+app.use(passport.initialize(),(req,res,next)=>{
+  console.log("++++++ passport.initialize()");
+  next();
+}); // req 객체에 possprot 설정 미들웨어
+app.use(passport.session(),(req,res,next)=>{
+  console.log("++++++ passport.session()");
+  next();
+});    // req.session 객체에 passport 정보 저장 미들웨어
 
 app.use('/', indexRouter);
 app.use('/test1', test1Router);
